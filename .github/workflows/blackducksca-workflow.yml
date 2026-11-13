@@ -9,6 +9,7 @@ on:
       - develop
       - stage
       - release
+      - unstable
   pull_request:
     branches:
       - main
@@ -16,6 +17,7 @@ on:
       - develop
       - stage
       - release
+      - unstable
   workflow_dispatch: {}
 jobs:
   blackducksca:
@@ -31,3 +33,5 @@ jobs:
           ### SCANNING: Required fields
           blackducksca_url: ${{ vars.BLACKDUCKSCA_URL }}
           blackducksca_token: ${{ secrets.BLACKDUCKSCA_TOKEN }}
+          ### Configuration if Bridge diagnostic files needs to be uploaded
+          include_diagnostics: true
